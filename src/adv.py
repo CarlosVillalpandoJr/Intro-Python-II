@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 
 # Declare all the rooms
 
@@ -21,6 +22,13 @@ to north. The smell of gold permeates the air."""),
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south."""),
 }
+
+wand = Item('wand', 'Magic wand used to cast spells')
+book = Item('book', 'Book containing different spells')
+necklace = Item('necklace', 'Invisibility necklace')
+potion = Item('potion', 'Health potion')
+
+print(wand.name)
 
 
 # Link rooms together

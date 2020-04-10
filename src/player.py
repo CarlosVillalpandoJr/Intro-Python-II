@@ -2,9 +2,10 @@
 # currently.
 
 class Player:
-    def __init__(self, name, current_room):
+    def __init__(self, name, current_room, items=None):
         self.name = name
         self.current_room = current_room
+        self.items = items
     def move(self, direction):
         if getattr(self.current_room, direction + '_to'):
             self.current_room = getattr(self.current_room, direction + '_to')
