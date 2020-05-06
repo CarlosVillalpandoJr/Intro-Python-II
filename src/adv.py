@@ -1,10 +1,10 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
 room = {
-    'outside':  Room("Outside Cave Entrance",
-                    "North of you, the cave mount beckons"),
+    'outside':  Room("Outside Cave Entrance", """North of you, the cave mount beckons"""),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
 passages run north and east."""),
@@ -50,6 +50,11 @@ room['treasure'].s_to = room['narrow']
 #
 # If the user enters "q", quit the game.
 
+while True:
+    user_input = input('Enter Name (q to quit):')
+    if user_input == 'q':
+        print('Bye')
+        break;
 
 
 
