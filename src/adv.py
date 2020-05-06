@@ -38,7 +38,7 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
+player = Player(input('Enter Name (q to quit):'), room['outside'])
 # Write a loop that:
 #
 # * Prints the current room name
@@ -51,11 +51,8 @@ room['treasure'].s_to = room['narrow']
 # If the user enters "q", quit the game.
 
 while True:
-    user_input = input('Enter Name (q to quit):')
-    if user_input == 'q':
-        print('Bye')
-        break;
-
+    print(f'{player.name}...{player.curr_room}')
+    break;
 
 
 

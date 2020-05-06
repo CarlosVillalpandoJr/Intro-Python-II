@@ -2,6 +2,9 @@
 # currently.
 
 class Player:
-    def __init__(self, name, cur_room):
+    def __init__(self, name, curr_room):
         self.name = name
-        self.cur_room = cur_room
+        self.curr_room = curr_room
+
+    def __str__(self):
+        return f'{self.name}'
