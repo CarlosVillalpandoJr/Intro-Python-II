@@ -38,7 +38,7 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-player = Player(input('Enter Name (q to quit):'), room['outside'])
+player = Player(input('Enter Name: '), room['outside'])
 # Write a loop that:
 #
 # * Prints the current room name
@@ -52,7 +52,36 @@ player = Player(input('Enter Name (q to quit):'), room['outside'])
 
 while True:
     print(f'{player.name}...{player.curr_room}')
-    break;
-
-
+    user_input = input('Enter a direction to travel (n, s, e, w) or (Q) to quit:')
+    if user_input == 'Q':
+        print('Game Over')
+        break
+    
+    try:
+        if user_input == 'n':
+            if player.curr_room.n_to:
+                print('**Moved North**')
+                player.curr_room = player.curr_room.n_to
+            else:
+                print('**Cannot move that direction**')
+        elif user_input == 's':
+            if hasattr(player.curr_room, 's_to'):
+                player.curr_room = player.curr_room.s_to
+                print('**Moved South**')
+            else:
+                print('**Cannot move that direction**')
+        elif user_input == 'e':
+            if player.curr_room.e_to:
+                player.curr_room = player.curr_room.e_to
+                print('**Moved East**')
+            else:
+                print('**Cannot move that direction**')
+        elif user_input == 'w':
+            if player.curr_room.w_to:
+                print('**Moved West**')
+                player.curr_room = player.curr_room.w_to
+            else:
+                print('**Cannot move that direction**')
+    except ValueError:
+        print('Not a valid command!')
 
