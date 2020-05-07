@@ -71,7 +71,7 @@ while True:
             else:
                 print('**Cannot move that direction**')
         elif user_input == 'e':
-            if player.curr_room.e_to:
+            if hasattr(player.curr_room, 'e_to'):
                 player.curr_room = player.curr_room.e_to
                 print('**Moved East**')
             else:
